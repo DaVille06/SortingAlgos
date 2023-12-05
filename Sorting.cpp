@@ -19,8 +19,32 @@ void Sorting::selection_sort(std::vector<int> &arr) {
 // Sorts the given array in ascending order
 // Finds a pivot point and divides the array in half each time
 // Runs in O(n * log n)
-std::vector<int>& Sorting::quick_sort(std::vector<int> &arr) {
-	return arr;
+std::vector<int> Sorting::quick_sort(std::vector<int> &arr) {
+	if (arr.size() < 2) {
+		return arr;
+	}
+
+	int pivot = arr[0];
+	std::vector<int> lower;
+	std::vector<int> higher;
+
+	for (int i = 1; i < arr.size(); i++) {
+		if (arr[i] <= pivot) {
+			lower.push_back(arr[i]);
+		}
+		else {
+			higher.push_back(arr[i]);
+		}
+	}
+
+	std::vector<int> result;
+	lower = Sorting::quick_sort(lower);
+	result.insert(result.end(), lower.begin(), lower.end());
+	result.push_back(pivot);
+	higher = Sorting::quick_sort(higher);
+	result.insert(result.end(), higher.begin(), higher.end());
+
+	return result;
 }
 
 // Prints the given array values

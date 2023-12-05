@@ -14,7 +14,7 @@ int main()
 
     std::cout << "Before Quick Sort\n" << std::endl;
     Sorting::print(arr2);
-    Sorting::quick_sort(arr2);
+    arr2 = Sorting::quick_sort(arr2);
     std::cout << "Quick Sort\n" << std::endl;
     Sorting::print(arr2);
 
