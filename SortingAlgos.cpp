@@ -17,9 +17,4 @@ int main()
     arr2 = Sorting::quick_sort(arr2);
     std::cout << "Quick Sort\n" << std::endl;
     Sorting::print(arr2);
-
-    /*auto binResultFound = Search::binary_search(arr, 15);
-    auto binResultNotFound = Search::binary_search(arr, 100);
-    std::cout << "Binary - 15 was found at position: " << binResultFound << std::endl;
-    std::cout << "Binary - 100 was not found: " << binResultNotFound << std::endl;*/
 }
